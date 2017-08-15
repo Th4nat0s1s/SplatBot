@@ -2,20 +2,19 @@ import discord
 from discord.ext import commands
 import asyncio
 
-Client = discord.Client()
-bot_prefix= "!"
+description = '''A fresh Bot for all of your Splatoon needs!'''
 
-@client.event
+bot = commands.Bot(command_prefix='?', description=description)
+
+@bot.event
 async def on_ready(pass_context=True):
    print("SplatBot Online!")
-   print("Name: {}".format(client.user.name))
-   print("ID: {}".format(client.user.id))
+   print("Name: {}".format(bot.user.name))
+   print("ID: {}".format(bot.user.id))
+   print("-----")
 
-@client.command
+@bot.command()
 async def ping(ctx):
-   await client.say("Pong!")
+   await bot.say("Pong!".format(ctx))
 
-client.run="redacted"
-
-@client.close
-async def close():
+bot.run="redacted"
