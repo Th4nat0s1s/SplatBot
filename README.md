@@ -1,0 +1,2 @@
+# SplatBot
+Splatoon Discord Bot
